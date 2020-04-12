@@ -13,7 +13,9 @@
   function simulateAsyncAPI2(text, timeout, callback) {
     setTimeout(() => {
       console.log(text);
-      callback();
+      if (callback) {
+        callback();
+      }
     }, timeout);
   }
   // 3. Promise
@@ -28,9 +30,7 @@
     // 2
     simulateAsyncAPI2("A", 3000, () => {
       simulateAsyncAPI2("B", 2000, () => {
-        simulateAsyncAPI2("C", 1000, () => {
-          console.log("Callback")
-        })
+        simulateAsyncAPI2("C", 1000)
       })
     });
     
