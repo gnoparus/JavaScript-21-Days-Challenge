@@ -1,7 +1,7 @@
 (() => {
   // เริ่มเขียนโค้ด
 
-  const KEY = "98IHlaLV1epkT33pwv5vlftqzI9HEwobB9DeGTL9aFM";
+  const KEY = "abcd-efgh-ijkl";
   const galleryElem = document.querySelector(".gallery");
   const loaderElem = document.querySelector(".loader");
 
