@@ -77,14 +77,18 @@
     document.body.removeChild(resultElem);
   }
 
-  function onInput(event) {
-    const input = event.target.value;    
-    
-    // console.log(event.target.value);
+  function clearResult() {
     resultElem = document.querySelector(".results");
     if (resultElem) {
       document.body.removeChild(resultElem);
     }   
+  }
+
+  function onInput(event) {
+    const input = event.target.value;    
+    
+    // console.log(event.target.value);
+    clearResult();
 
     resultElem = document.createElement("ul");
     resultElem.setAttribute("class", "results");
@@ -102,8 +106,8 @@
 
   function run() {
     searchElem.addEventListener("input", onInput);
+    document.addEventListener("click", clearResult);
   }
 
   run();
-
 })();
