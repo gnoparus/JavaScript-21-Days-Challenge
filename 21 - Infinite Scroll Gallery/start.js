@@ -1,7 +1,7 @@
 (() => {
   // เริ่มเขียนโค้ด
 
-  const KEY = "abcd-efgh-ijkl";
+  const KEY = "abcdefghijklmnopqrstupwxyz";
   const galleryElem = document.querySelector(".gallery");
   const loaderElem = document.querySelector(".loader");
 
@@ -21,12 +21,13 @@
 
   async function displayImages() {
 
+    showLoader();
+
     const response = await fetch(`https://api.unsplash.com/search/photos?page=${page}&query=paris&client_id=${KEY}`)
     // console.log(response.json());
     const { results } = await response.json();
     // console.log(results);
 
-    showLoader();
 
     // setTimeout(() => {
     //   console.log("3 seconds")
